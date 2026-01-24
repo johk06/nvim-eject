@@ -91,8 +91,8 @@ local do_write_ejected = function(target, ev, region, leading_indent)
 
     bo.modifiable = false
 
-    local linecount = #text
-    local endcol = #text[#text]
+    local linecount = #new_orig_text
+    local endcol = #new_orig_text[#new_orig_text]
 
     local new_region = {
         region[1],
