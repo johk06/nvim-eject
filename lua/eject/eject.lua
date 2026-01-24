@@ -245,8 +245,6 @@ M.eject_ts = function()
             line_len(buf, match.region[3]) == match.region[4]
             and match.region[2] == 0)
     end
-
-    vim.print(matching)
 end
 
 return M
