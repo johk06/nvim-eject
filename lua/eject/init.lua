@@ -21,7 +21,8 @@ local default = {
         })
     end,
     name_buf = function(target, region)
-        return ("eject:%d-%d"):format(region[1], region[3])
+        local oldname = vim.api.nvim_buf_get_name(target)
+        return ("%s[%d:%d]"):format(oldname, region[1] + 1, region[3] + 1)
     end,
     hl_group = "Visual",
 }

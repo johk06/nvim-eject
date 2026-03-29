@@ -104,7 +104,7 @@ local do_write_ejected = function(target, ev, region, leading_indent)
     }
     hlregion(target, new_region)
 
-    vim.bo[buf].modified = false
+    bo.modified = false
 
     return new_region
 end
@@ -185,6 +185,7 @@ end
 ---@param buf integer()
 ---@param match table<integer, TSNode[]>
 ---@param meta vim.treesitter.query.TSMetadata
+---@return {lang: string, node: TSNode, region: Range4}?
 local injection_data_for_match = function(query, buf, match, meta)
     local lang = meta["injection.language"]
     local content
