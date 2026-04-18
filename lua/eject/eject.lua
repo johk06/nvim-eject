@@ -104,7 +104,7 @@ local do_write_ejected = function(target, ev, region, leading_indent)
     }
     hlregion(target, new_region)
 
-    bo.modified = false
+    vim.bo[ev.buf].modified = false
 
     return new_region
 end
